@@ -1,0 +1,8 @@
+		string[] oneShareFileNames = new string[3];
+            string[] portfolioFileNames = new string[3];
+            for (int i = 0; i < 3; i++)
+            {
+                oneShareFileNames = oneShareFileNames.Append(String.Format("share_1_strike_{0}.json", 9 + i)).ToArray();
+                portfolioFileNames = portfolioFileNames.Append(String.Format("share_5_strike_{0}.json", 9 + i)).ToArray();
+
+            }
