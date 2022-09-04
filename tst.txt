@@ -6,3 +6,14 @@
                 portfolioFileNames = portfolioFileNames.Append(String.Format("share_5_strike_{0}.json", 9 + i)).ToArray();
 
             }
+
+
+public static void Main()
+        {
+            string path = "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies";
+            string fileName = "TestParameters\\share_5_strike_11.json";
+            var jsonResult = JsonHandler(path, fileName);
+            var dataFeedList = CsvHandler("C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies", "MarketData\\data_share_5_2.csv", 5);
+            //Console.WriteLine($"{jsonResult.BasketOption.UnderlyingShareIds[0]}");
+            Console.WriteLine($"{dataFeedList[1].PriceList["share_3"]}");
+        }
