@@ -54,7 +54,7 @@ namespace Portfolio.Library
             double premium = initialPriceResult.Price;
             //looping
             List<double> portfolio = new List<double>() { premium };
-            double precedentPortfolioValue = premium;
+            double previousPortfolioValue = premium;
             //portfolio.Add(premium);
             foreach (DataFeed dataFeed in marketData)
             {
@@ -62,13 +62,13 @@ namespace Portfolio.Library
                 {
                     double[] spots = SpotsArray(dataFeed);
                     double riskFreeRate = RiskFreeRateProvider.GetRiskFreeRateAccruedValue(initialDate, dataFeed.Date);
-                    double portfolioValue = (precedentPortfolioValue - SharesQuantity(deltas, initialSpots)) * riskFreeRate + SharesQuantity(deltas, spots);
+                    double portfolioValue = (previousPortfolioValue - SharesQuantity(deltas, initialSpots)) * riskFreeRate + SharesQuantity(deltas, spots);
 
                     //Don't forget the rebalancing ; discarded for now
                     initialDate = dataFeed.Date;
                     double timeToMaturity = MathDateConverter.ConvertToMathDistance(dataFeed.Date, testParameters.BasketOption.Maturity);
                     PricingResults priceResult = pricer.Price(timeToMaturity, spots);
-                    precedentPortfolioValue = portfolioValue;
+                    previousPortfolioValue = portfolioValue;
                     deltas = priceResult.Deltas;
                     initialSpots = spots;
                     portfolio.Add(portfolioValue);
