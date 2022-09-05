@@ -17,3 +17,24 @@ public static void Main()
             //Console.WriteLine($"{jsonResult.BasketOption.UnderlyingShareIds[0]}");
             Console.WriteLine($"{dataFeedList[1].PriceList["share_3"]}");
         }
+
+
+
+
+public static void Main()
+        {
+            string path = "C:\\Users\\localuser\\Desktop\\c#\\systematic-strategies";
+            string fileName = "TestParameters\\share_5_strike_9.json";
+            var testParameters = JsonHandler(path, fileName);
+            var marketData = CsvHandler("C:\\Users\\localuser\\Desktop\\c#\\systematic-strategies", "MarketData\\data_share_5_2.csv", 5);
+            //Console.WriteLine($"{testParameters.BasketOption.UnderlyingShareIds[0]}");
+            //Console.WriteLine($"{marketData[1].PriceList["share_3"]}");
+            var portfolio = PortfolioValues(testParameters, marketData);
+            //for(int i= 0; i < portfolio.Count; i++)
+            //{
+            //  Console.WriteLine($"{portfolio[i]}");
+            //}
+            Console.WriteLine($"{portfolio[0]}" + "    " + $"{portfolio[4]}");
+
+
+        }
