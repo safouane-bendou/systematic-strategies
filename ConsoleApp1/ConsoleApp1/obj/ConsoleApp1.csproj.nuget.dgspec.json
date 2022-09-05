@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\localuser\\Desktop\\c#\\systematic-strategies\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\localuser\\Desktop\\c#\\systematic-strategies\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\localuser\\Desktop\\c#\\systematic-strategies\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\localuser\\Desktop\\c#\\systematic-strategies\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
-        "packagesPath": "C:\\Users\\localuser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\localuser\\Desktop\\c#\\systematic-strategies\\ConsoleApp1\\ConsoleApp1\\obj\\",
+        "projectPath": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "packagesPath": "C:\\Users\\sbend\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\localuser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sbend\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -27,15 +27,14 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\localuser\\Downloads": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Users\\sbend\\Downloads": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\localuser\\Desktop\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj": {
-                "projectPath": "C:\\Users\\localuser\\Desktop\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj"
+              "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj": {
+                "projectPath": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj"
               }
             }
           }
@@ -91,20 +90,20 @@
         }
       }
     },
-    "C:\\Users\\localuser\\Desktop\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj": {
+    "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\localuser\\Desktop\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj",
+        "projectUniqueName": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj",
         "projectName": "Portfolio.Library",
-        "projectPath": "C:\\Users\\localuser\\Desktop\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj",
-        "packagesPath": "C:\\Users\\localuser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\localuser\\Desktop\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\obj\\",
+        "projectPath": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj",
+        "packagesPath": "C:\\Users\\sbend\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\localuser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sbend\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -114,8 +113,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\localuser\\Downloads": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Users\\sbend\\Downloads": {}
         },
         "frameworks": {
           "net6.0": {
