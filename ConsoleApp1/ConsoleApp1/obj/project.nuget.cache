@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "vMJjMvtgEK0piSBrXST7IFxqkMnHD7LDX0IKeOqGtY9vlAmedbOM0eiwTwAINe4H5JSvyK0kaqsBdq/sPF3eKQ==",
+  "dgSpecHash": "cso/jINffkC78NU+jiidNXQ9Bt5IzBF+ooUEI1JqeF6A+5kNsEsOVoBO7pJHkf/6X7na5SGtcDwuSronSLcwMg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+  "projectFilePath": "C:\\Users\\localuser\\source\\repos\\systematic-strategies(1)\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\sbend\\.nuget\\packages\\csvhelper\\28.0.1\\csvhelper.28.0.1.nupkg.sha512",
-    "C:\\Users\\sbend\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
-    "C:\\Users\\sbend\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
-    "C:\\Users\\sbend\\.nuget\\packages\\microsoft.netcore.windows.apisets-x86\\1.0.0\\microsoft.netcore.windows.apisets-x86.1.0.0.nupkg.sha512",
-    "C:\\Users\\sbend\\.nuget\\packages\\pricinglibrary\\2.0.1.5\\pricinglibrary.2.0.1.5.nupkg.sha512"
+    "C:\\Users\\localuser\\.nuget\\packages\\csvhelper\\28.0.1\\csvhelper.28.0.1.nupkg.sha512",
+    "C:\\Users\\localuser\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
+    "C:\\Users\\localuser\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
+    "C:\\Users\\localuser\\.nuget\\packages\\microsoft.netcore.windows.apisets-x86\\1.0.0\\microsoft.netcore.windows.apisets-x86.1.0.0.nupkg.sha512",
+    "C:\\Users\\localuser\\.nuget\\packages\\pricinglibrary\\2.0.1.5\\pricinglibrary.2.0.1.5.nupkg.sha512"
   ],
   "logs": []
 }

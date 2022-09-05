@@ -12,6 +12,7 @@
           "FluentValidation": "11.2.1",
           "MathNet.Numerics": "5.0.0",
           "Microsoft.NETCore.Windows.ApiSets-x86": "1.0.0",
+          "Portfolio.Library": "1.0.0",
           "PricingLibrary": "2.0.1.5"
         },
         "runtime": {
@@ -769,6 +770,14 @@
             "fileVersion": "0.0.0.0"
           }
         }
+      },
+      "Portfolio.Library/1.0.0": {
+        "dependencies": {
+          "PricingLibrary": "2.0.1.5"
+        },
+        "runtime": {
+          "Portfolio.Library.dll": {}
+        }
       }
     }
   },
@@ -812,6 +821,11 @@
       "sha512": "sha512-WPATrRH3OPFPOihaWZylMCDpnH1Ml8OBG3MkBUMo8+ci6THZn9sqDg1bR05Z7r9Vi4DAFFdkoS0SzKLUOcg/0Q==",
       "path": "pricinglibrary/2.0.1.5",
       "hashPath": "pricinglibrary.2.0.1.5.nupkg.sha512"
+    },
+    "Portfolio.Library/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

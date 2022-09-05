@@ -1,0 +1,12 @@
+C:\Users\localuser\source\repos\systematic-strategies(1)\ConsoleApp1\Portfolio.Library\bin\Debug\net6.0\Portfolio.Library.deps.json
+C:\Users\localuser\source\repos\systematic-strategies(1)\ConsoleApp1\Portfolio.Library\bin\Debug\net6.0\Portfolio.Library.dll
+C:\Users\localuser\source\repos\systematic-strategies(1)\ConsoleApp1\Portfolio.Library\bin\Debug\net6.0\Portfolio.Library.pdb
+C:\Users\localuser\source\repos\systematic-strategies(1)\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\Portfolio.Library.csproj.AssemblyReference.cache
+C:\Users\localuser\source\repos\systematic-strategies(1)\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\Portfolio.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\localuser\source\repos\systematic-strategies(1)\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\Portfolio.Library.AssemblyInfoInputs.cache
+C:\Users\localuser\source\repos\systematic-strategies(1)\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\Portfolio.Library.AssemblyInfo.cs
+C:\Users\localuser\source\repos\systematic-strategies(1)\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\Portfolio.Library.csproj.CoreCompileInputs.cache
+C:\Users\localuser\source\repos\systematic-strategies(1)\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\Portfolio.Library.dll
+C:\Users\localuser\source\repos\systematic-strategies(1)\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\refint\Portfolio.Library.dll
+C:\Users\localuser\source\repos\systematic-strategies(1)\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\Portfolio.Library.pdb
+C:\Users\localuser\source\repos\systematic-strategies(1)\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\ref\Portfolio.Library.dll
