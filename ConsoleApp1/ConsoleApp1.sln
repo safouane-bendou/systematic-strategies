@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{7B04DA72-B92D-4157-8575-7593B8C64E8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Library", "Portfolio.Library\Portfolio.Library.csproj", "{64417390-C430-430E-95A9-627CDD8BB57D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioLibrary", "Portfolio.Library\PortfolioLibrary.csproj", "{64417390-C430-430E-95A9-627CDD8BB57D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

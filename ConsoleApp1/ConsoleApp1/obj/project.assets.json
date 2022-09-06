@@ -732,17 +732,17 @@
           }
         }
       },
-      "Portfolio.Library/1.0.0": {
+      "PortfolioLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "PricingLibrary": "2.0.1.5"
         },
         "compile": {
-          "bin/placeholder/Portfolio.Library.dll": {}
+          "bin/placeholder/PortfolioLibrary.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Portfolio.Library.dll": {}
+          "bin/placeholder/PortfolioLibrary.dll": {}
         }
       }
     }
@@ -1009,10 +1009,10 @@
         "runtimes/win10-x64/native/libpnl.lib"
       ]
     },
-    "Portfolio.Library/1.0.0": {
+    "PortfolioLibrary/1.0.0": {
       "type": "project",
-      "path": "../Portfolio.Library/Portfolio.Library.csproj",
-      "msbuildProject": "../Portfolio.Library/Portfolio.Library.csproj"
+      "path": "../Portfolio.Library/PortfolioLibrary.csproj",
+      "msbuildProject": "../Portfolio.Library/PortfolioLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1021,7 +1021,7 @@
       "FluentValidation >= 11.2.1",
       "MathNet.Numerics >= 5.0.0",
       "Microsoft.NETCore.Windows.ApiSets-x86 >= 1.0.0",
-      "Portfolio.Library >= 1.0.0",
+      "PortfolioLibrary >= 1.0.0",
       "PricingLibrary >= 2.0.1.5"
     ]
   },
@@ -1058,8 +1058,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj": {
-              "projectPath": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj"
+            "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\PortfolioLibrary.csproj": {
+              "projectPath": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\PortfolioLibrary.csproj"
             }
           }
         }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PricingLibrary.RebalancingOracleDescriptions;
-namespace Portfolio.Library
+namespace PortfolioLibrary
 {
     internal interface IRebalanceOracle
     {

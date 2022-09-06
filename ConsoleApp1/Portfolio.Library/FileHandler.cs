@@ -9,7 +9,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Portfolio.Library
+namespace PortfolioLibrary
 {
     public class FileHandler
     {

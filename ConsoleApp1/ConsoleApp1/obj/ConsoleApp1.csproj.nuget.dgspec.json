@@ -33,8 +33,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj": {
-                "projectPath": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj"
+              "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\PortfolioLibrary.csproj": {
+                "projectPath": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\PortfolioLibrary.csproj"
               }
             }
           }
@@ -90,12 +90,12 @@
         }
       }
     },
-    "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj": {
+    "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\PortfolioLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj",
-        "projectName": "Portfolio.Library",
-        "projectPath": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj",
+        "projectUniqueName": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\PortfolioLibrary.csproj",
+        "projectName": "PortfolioLibrary",
+        "projectPath": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\PortfolioLibrary.csproj",
         "packagesPath": "C:\\Users\\sbend\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\obj\\",
         "projectStyle": "PackageReference",

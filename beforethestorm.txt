@@ -1,75 +1,51 @@
-using PricingLibrary.Computations;
+using System.Text.Json;
+using PricingLibrary;
 using PricingLibrary.DataClasses;
-using PricingLibrary.MarketDataFeed;
-using PricingLibrary.TimeHandler;
-using System;
-using System.Collections.Generic;
+using PricingLibrary.RebalancingOracleDescriptions;
+using CsvHelper;
+using System.IO;
+using System.Globalization;
 using System.Linq;
+using System.Dynamic;
+using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using PricingLibrary.MarketDataFeed;
+using PricingLibrary.Computations;
+using PricingLibrary.TimeHandler;
+using MathNet.Numerics.Statistics;
+using PortfolioLibrary;
 
-namespace Portfolio.Library
+namespace ConsoleApp1
 {
-    public class PortfolioComputations
+
+    public class Program
     {
-        public static double[] SpotsArray(Dictionary<string, double> PriceList)
+        public static void Main(string[] args)
         {
-            int numberOfShares = PriceList.Count;
-            double[] allSpots = new double[numberOfShares];
-            for (int i = 0; i < PriceList.Count; i++)
-            {
-                double spot = PriceList.ElementAt(i).Value;
-                allSpots[i] = spot;
-            }
-            return allSpots;
-        }
-
-        public static bool RebalancingTime(DateTime date)
-        {
-            return date.DayOfWeek == DayOfWeek.Monday;
-        }
-
-        public static double riskyAssetsValue(Dictionary<string, double> composition, Dictionary<string, double> spots)
-        {
-            double sumOfQuantities = 0;
-            int counter = 0;
-            foreach (var shareId in composition.Keys)
-            {
-                sumOfQuantities += composition[shareId] * spots[shareId];
-                counter++;
-            }
-            return sumOfQuantities;
-        }
-
-        public List<double> PortfolioValues(TestParameters testParameters, List<DataFeed> marketData, Portfolio portfolio)
-        {
-            //premium computing
-            DataFeed initialDataFeed = marketData[0];
-            portfolio.Composition = UpdateCompo(testParameters, initialDataFeed);
-            List<double> resultingPortfolio = new List<double>() { portfolio.Value };
-            foreach (DataFeed dataFeed in marketData.Skip(1))
-            {
-                portfolio.UpdatingPortfolio(dataFeed);
-                //Don't forget the rebalancing ; discarded for now : if Rebalancing()
-                Portfolio.Composition = UpdateCompo(testParameters, dataFeed);
-            }
-            //return portfolio;
-        }
-
-
-        public static Dictionary<string, double> UpdateCompo(TestParameters testParameters, DataFeed dataFeed, Pricer pricer)
-        {
+            List<double> OptionPrices = new List<double>();
+            string path = args[0];
+            //string fileName = "share_5_strike_11.json";
+            var testParameters = FileHandler.JsonHandler(path);
+            var marketData = FileHandler.CsvHandlerInput(args[1], 5);
+            DateTime optionMaturity = testParameters.BasketOption.Maturity;
             Pricer pricer = new Pricer(testParameters);
-            double timeToMaturity = MathDateConverter.ConvertToMathDistance(dataFeed.Date, testParameters.BasketOption.Maturity);
-            PricingResults priceResult = pricer.Price(timeToMaturity, SpotsArray(dataFeed.PriceList));
-            Dictionary<string, double> resultedUpdate = new Dictionary<string, double>();
-            int counter = 0;
-            foreach (var shareId in dataFeed.PriceList.Keys)
+            List<double> portfolioValues = PortfolioComputations.PortfolioValues(marketData, optionMaturity, pricer);
+            for (int i = 0; i < portfolioValues.Count; i++)
             {
-                resultedUpdate.Add(shareId, priceResult.Deltas[counter]);
-                counter++;
+                double TimeToMaturity = MathDateConverter.ConvertToMathDistance(marketData[i].Date, testParameters.BasketOption.Maturity);
+                double[] Spots = PortfolioComputations.SpotsArray(marketData[i].PriceList);
+                PricingResults PriceResult = pricer.Price(TimeToMaturity, Spots);
+                OptionPrices.Add(PriceResult.Price);
+                Console.WriteLine(PriceResult.Price + " " + portfolioValues[i]);
             }
-            return resultedUpdate;
+            FileHandler.CsvHandlerOutput(args[2], "Portfolio Values", portfolioValues);
+            FileHandler.CsvHandlerOutput(args[3], "Option Prices", OptionPrices);
+            /*FileHandler.CsvHandlerOutput("C:\\Users\\localuser\\source\\repos\\systematic-strategies(1)\\PortfolioValues.csv", "Portfolio Values", portfolio);
+            FileHandler.CsvHandlerOutput("C:\\Users\\localuser\\source\\repos\\systematic-strategies(1)\\OptionPrices.csv", "Option Prices", OptionPrices);*/
+
         }
+
+
     }
 }

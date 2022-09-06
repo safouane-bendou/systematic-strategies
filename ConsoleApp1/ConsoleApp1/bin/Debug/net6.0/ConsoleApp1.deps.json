@@ -12,7 +12,7 @@
           "FluentValidation": "11.2.1",
           "MathNet.Numerics": "5.0.0",
           "Microsoft.NETCore.Windows.ApiSets-x86": "1.0.0",
-          "Portfolio.Library": "1.0.0",
+          "PortfolioLibrary": "1.0.0",
           "PricingLibrary": "2.0.1.5"
         },
         "runtime": {
@@ -771,12 +771,12 @@
           }
         }
       },
-      "Portfolio.Library/1.0.0": {
+      "PortfolioLibrary/1.0.0": {
         "dependencies": {
           "PricingLibrary": "2.0.1.5"
         },
         "runtime": {
-          "Portfolio.Library.dll": {}
+          "PortfolioLibrary.dll": {}
         }
       }
     }
@@ -822,7 +822,7 @@
       "path": "pricinglibrary/2.0.1.5",
       "hashPath": "pricinglibrary.2.0.1.5.nupkg.sha512"
     },
-    "Portfolio.Library/1.0.0": {
+    "PortfolioLibrary/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

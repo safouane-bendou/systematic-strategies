@@ -9,10 +9,10 @@ using PricingLibrary.MarketDataFeed;
 using PricingLibrary.TimeHandler;
 
 
-using Portfolio.Library;
+using PortfolioLibrary;
 
 
-namespace Portfolio.Library
+namespace PortfolioLibrary
 {
     public class Portfolio
     {
@@ -29,24 +29,17 @@ namespace Portfolio.Library
         }
 
 
-
-        public void UpdateCompo(DataFeed dataFeed, DateTime optionMaturity, Pricer pricer)
+        //update que les deltas
+        public void UpdateCompo(Dictionary<string, double> newComposition)
         {
-            double timeToMaturity = MathDateConverter.ConvertToMathDistance(dataFeed.Date, optionMaturity);
-            PricingResults priceResult = pricer.Price(timeToMaturity, PortfolioComputations.SpotsArray(dataFeed.PriceList));
-            int count = 0;
-            foreach (var shareId in dataFeed.PriceList.Keys)
-            {
-                Composition[shareId] = priceResult.Deltas[count];
-                count++;
-            }
+            Composition = newComposition;
         }
 
-
-        public void UpdatingPortfolio(DataFeed dataFeed)
+        //update les autres
+        public void UpdatingPortfolio(DataFeed dataFeed, Dictionary<string, double> assets)
         {
             double capitalisationRiskFree = RiskFreeRateProvider.GetRiskFreeRateAccruedValue(CurrentDate, dataFeed.Date);
-            Value = (Value - PortfolioComputations.riskyAssetsValue(Composition, dataFeed.PriceList)) * capitalisationRiskFree + PortfolioComputations.riskyAssetsValue(Composition, dataFeed.PriceList);
+            Value = (Value - PortfolioComputations.RiskyAssetsValue(Composition, assets)) * capitalisationRiskFree + PortfolioComputations.RiskyAssetsValue(Composition, dataFeed.PriceList);
             CurrentDate = dataFeed.Date;
         }
 

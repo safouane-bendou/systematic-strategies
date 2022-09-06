@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Portfolio.Library
+namespace PortfolioLibrary
 {
     public class PortfolioComputations
     {
@@ -24,7 +24,7 @@ namespace Portfolio.Library
             return allSpots;
         }
 
-        public static double riskyAssetsValue(Dictionary<string, double> composition, Dictionary<string, double> spots)
+        public static double RiskyAssetsValue(Dictionary<string, double> composition, Dictionary<string, double> spots)
         {
             double sumOfQuantities = 0;
             int counter = 0;
@@ -36,19 +36,49 @@ namespace Portfolio.Library
             return sumOfQuantities;
         }
 
-        public static void PortfolioValues(Portfolio portfolio, List<DataFeed> marketData, Pricer pricer, DateTime optionMaturity)
+        public static Dictionary<string, double> ComputeNewComposition(DataFeed dataFeed, DateTime optionMaturity, Pricer pricer)
         {
-            //premium computing
+            Dictionary<string, double> newComposition = new Dictionary<string, double>();
+            double timeToMaturity = MathDateConverter.ConvertToMathDistance(dataFeed.Date, optionMaturity);
+            PricingResults priceResult = pricer.Price(timeToMaturity, PortfolioComputations.SpotsArray(dataFeed.PriceList));
+            int count = 0;
+            foreach (var shareId in dataFeed.PriceList.Keys)
+            {
+                newComposition[shareId] = priceResult.Deltas[count];
+                count++;
+            }
+            return newComposition;
+        }
+
+        public static double ComputePremium(DataFeed dataFeed, DateTime optionMaturity, Pricer pricer)
+        {
+            double timeToMaturity = MathDateConverter.ConvertToMathDistance(dataFeed.Date, optionMaturity);
+            PricingResults priceResult = pricer.Price(timeToMaturity, PortfolioComputations.SpotsArray(dataFeed.PriceList));
+            return priceResult.Price;
+        }
+
+        public static List<double> PortfolioValues(List<DataFeed> marketData, DateTime optionMaturity, Pricer pricer)
+        {
+            //creating a brand new portfolio, no need to update when just getting started
             DataFeed initialDataFeed = marketData[0];
-            portfolio.UpdateCompo(initialDataFeed, optionMaturity, pricer);
-            List<double> resultingPortfolio = new List<double>() { portfolio.Value };
+            Dictionary<string, double> assets = initialDataFeed.PriceList;
+            Dictionary<string, double> newComposition = ComputeNewComposition(initialDataFeed, optionMaturity, pricer);
+            double premium = ComputePremium(initialDataFeed, optionMaturity, pricer);
+            Portfolio portfolio = new Portfolio(newComposition, premium, initialDataFeed.Date);
+            List<double> resultingPortfolioValues = new List<double>() { portfolio.Value };
+            
+            
             foreach (DataFeed dataFeed in marketData.Skip(1))
             {
-                portfolio.UpdatingPortfolio(dataFeed);
+                portfolio.UpdatingPortfolio(dataFeed, assets);
                 //Don't forget the rebalancing ; discarded for now : if Rebalancing()
-                portfolio.UpdateCompo(dataFeed, optionMaturity, pricer);
+                portfolio.UpdateCompo(ComputeNewComposition(dataFeed, optionMaturity, pricer));
+
+                resultingPortfolioValues.Add(portfolio.Value);
+                assets = dataFeed.PriceList;
+
             }
-            //return portfolio;
+            return resultingPortfolioValues;
         }
     }
 }
