@@ -26,7 +26,7 @@ namespace Portfolio.Library
 
 
 
-        public static List<DataFeed> CsvHandler(string path, int numberOfShares)
+        public static List<DataFeed> CsvHandlerInput(string path, int numberOfShares)
         {
             string[] rawCsv = System.IO.File.ReadAllLines(path);
             var allDataFeeds = new List<DataFeed>();

@@ -1,4 +1,4 @@
-﻿using PricingLibrary.Computations;
+using PricingLibrary.Computations;
 using PricingLibrary.DataClasses;
 using PricingLibrary.MarketDataFeed;
 using PricingLibrary.TimeHandler;
@@ -24,6 +24,11 @@ namespace Portfolio.Library
             return allSpots;
         }
 
+        public static bool RebalancingTime(DateTime date)
+        {
+            return date.DayOfWeek == DayOfWeek.Monday;
+        }
+
         public static double riskyAssetsValue(Dictionary<string, double> composition, Dictionary<string, double> spots)
         {
             double sumOfQuantities = 0;
@@ -36,19 +41,35 @@ namespace Portfolio.Library
             return sumOfQuantities;
         }
 
-        public static void PortfolioValues(Portfolio portfolio, List<DataFeed> marketData, Pricer pricer, DateTime optionMaturity)
+        public List<double> PortfolioValues(TestParameters testParameters, List<DataFeed> marketData, Portfolio portfolio)
         {
             //premium computing
             DataFeed initialDataFeed = marketData[0];
-            portfolio.UpdateCompo(initialDataFeed, pricer, optionMaturity);
+            portfolio.Composition = UpdateCompo(testParameters, initialDataFeed);
             List<double> resultingPortfolio = new List<double>() { portfolio.Value };
             foreach (DataFeed dataFeed in marketData.Skip(1))
             {
                 portfolio.UpdatingPortfolio(dataFeed);
                 //Don't forget the rebalancing ; discarded for now : if Rebalancing()
-                portfolio.UpdateCompo(dataFeed, pricer, optionMaturity);
+                Portfolio.Composition = UpdateCompo(testParameters, dataFeed);
             }
             //return portfolio;
+        }
+
+
+        public static Dictionary<string, double> UpdateCompo(TestParameters testParameters, DataFeed dataFeed, Pricer pricer)
+        {
+            Pricer pricer = new Pricer(testParameters);
+            double timeToMaturity = MathDateConverter.ConvertToMathDistance(dataFeed.Date, testParameters.BasketOption.Maturity);
+            PricingResults priceResult = pricer.Price(timeToMaturity, SpotsArray(dataFeed.PriceList));
+            Dictionary<string, double> resultedUpdate = new Dictionary<string, double>();
+            int counter = 0;
+            foreach (var shareId in dataFeed.PriceList.Keys)
+            {
+                resultedUpdate.Add(shareId, priceResult.Deltas[counter]);
+                counter++;
+            }
+            return resultedUpdate;
         }
     }
 }
