@@ -40,13 +40,13 @@ namespace Portfolio.Library
         {
             //premium computing
             DataFeed initialDataFeed = marketData[0];
-            portfolio.UpdateCompo(initialDataFeed, pricer, optionMaturity);
+            portfolio.UpdateCompo(initialDataFeed, optionMaturity, pricer);
             List<double> resultingPortfolio = new List<double>() { portfolio.Value };
             foreach (DataFeed dataFeed in marketData.Skip(1))
             {
                 portfolio.UpdatingPortfolio(dataFeed);
                 //Don't forget the rebalancing ; discarded for now : if Rebalancing()
-                portfolio.UpdateCompo(dataFeed, pricer, optionMaturity);
+                portfolio.UpdateCompo(dataFeed, optionMaturity, pricer);
             }
             //return portfolio;
         }

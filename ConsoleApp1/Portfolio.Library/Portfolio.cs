@@ -28,18 +28,12 @@ namespace Portfolio.Library
             CurrentDate = currentDate;
         }
 
-        public void UpdatingPortfolio(DataFeed dataFeed)
-        {
-            double capitalisationRiskFree = RiskFreeRateProvider.GetRiskFreeRateAccruedValue(CurrentDate, dataFeed.Date);
-            Value = (Value - PortfolioComputations.riskyAssetsValue(Composition, dataFeed.PriceList)) * capitalisationRiskFree + PortfolioComputations.riskyAssetsValue(Composition, dataFeed.PriceList);
-            CurrentDate = dataFeed.Date;
-        }
 
-        public void UpdateCompo(DataFeed dataFeed, Pricer pricer, DateTime optionMaturity)
+
+        public void UpdateCompo(DataFeed dataFeed, DateTime optionMaturity, Pricer pricer)
         {
             double timeToMaturity = MathDateConverter.ConvertToMathDistance(dataFeed.Date, optionMaturity);
             PricingResults priceResult = pricer.Price(timeToMaturity, PortfolioComputations.SpotsArray(dataFeed.PriceList));
-            Dictionary<string, double> resultedUpdate = new Dictionary<string, double>();
             int count = 0;
             foreach (var shareId in dataFeed.PriceList.Keys)
             {
@@ -47,5 +41,15 @@ namespace Portfolio.Library
                 count++;
             }
         }
+
+
+        public void UpdatingPortfolio(DataFeed dataFeed)
+        {
+            double capitalisationRiskFree = RiskFreeRateProvider.GetRiskFreeRateAccruedValue(CurrentDate, dataFeed.Date);
+            Value = (Value - PortfolioComputations.riskyAssetsValue(Composition, dataFeed.PriceList)) * capitalisationRiskFree + PortfolioComputations.riskyAssetsValue(Composition, dataFeed.PriceList);
+            CurrentDate = dataFeed.Date;
+        }
+
+        
     }
 }

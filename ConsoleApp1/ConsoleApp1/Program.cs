@@ -30,7 +30,7 @@ namespace ConsoleApp1
             var marketData = FileHandler.CsvHandlerInput(args[1], 5);
             /*Console.WriteLine($"{testParameters.BasketOption.UnderlyingShareIds[0]}");
             Console.WriteLine($"{marketData[1].PriceList["share_3"]}");*/
-            var portfolio = PortfolioComputations.PortfolioValues(testParameters, marketData);
+            var portfolio = Portfolio();
             for (int i = 0; i < portfolio.Count; i++)
             {
                 Pricer pricer = new Pricer(testParameters);
