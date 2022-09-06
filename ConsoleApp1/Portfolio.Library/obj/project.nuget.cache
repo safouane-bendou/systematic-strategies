@@ -1,24 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "e4km+ySXYirvyzuGxfSD1kYAm/fPoaS1fr25DpkwM0BtkNO8LAqcJgcAqeLCuJqNG0e4iGaGWdFvRTo0eLUrRQ==",
+  "dgSpecHash": "1gsAVDPQ6cJXsx9ZoHUhC28CHYxWivyCOtXBn/WSj18MciuIvf+eYj4LUNVPba/QsPWrw9vJWIu0By2bpkahTQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj",
+  "projectFilePath": "C:\\Users\\localuser\\Desktop\\c#\\systematic-strategies\\ConsoleApp1\\Portfolio.Library\\Portfolio.Library.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\sbend\\.nuget\\packages\\csvhelper\\28.0.1\\csvhelper.28.0.1.nupkg.sha512",
-    "C:\\Users\\sbend\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
-    "C:\\Users\\sbend\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
-    "C:\\Users\\sbend\\.nuget\\packages\\pricinglibrary\\2.0.1.5\\pricinglibrary.2.0.1.5.nupkg.sha512"
+    "C:\\Users\\localuser\\.nuget\\packages\\csvhelper\\28.0.1\\csvhelper.28.0.1.nupkg.sha512",
+    "C:\\Users\\localuser\\.nuget\\packages\\fluentvalidation\\11.2.0\\fluentvalidation.11.2.0.nupkg.sha512",
+    "C:\\Users\\localuser\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
+    "C:\\Users\\localuser\\.nuget\\packages\\pricinglibrary\\2.0.1.5\\pricinglibrary.2.0.1.5.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "PricingLibrary 2.0.1.5 depends on FluentValidation (>= 11.2.0) but FluentValidation 11.2.0 was not found. An approximate best match of FluentValidation 11.2.1 was resolved.",
-      "libraryId": "FluentValidation",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }

@@ -39,21 +39,6 @@ namespace Portfolio.Library
                 counter++;
             }
             return sumOfQuantities;
-        }
-
-        public static Dictionary<string, double> UpdateCompo(TestParameters testParameters, DataFeed dataFeed)
-        {
-            Pricer pricer = new Pricer(testParameters);
-            double timeToMaturity = MathDateConverter.ConvertToMathDistance(dataFeed.Date, testParameters.BasketOption.Maturity);
-            PricingResults priceResult = pricer.Price(timeToMaturity, SpotsArray(dataFeed));
-            Dictionary<string, double> resultedUpdate = new Dictionary<string, double>();
-            int counter = 0;
-            foreach(var shareId in dataFeed.PriceList.Keys)
-            {
-                resultedUpdate.Add(shareId, priceResult.Deltas[counter]);
-                counter++;
-            }
-            return resultedUpdate;
-        }        
+        }      
     }
 }

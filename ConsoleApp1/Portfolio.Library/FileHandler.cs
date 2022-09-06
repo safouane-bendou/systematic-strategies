@@ -13,9 +13,9 @@ namespace Portfolio.Library
 {
     public class FileHandler
     {
-        public static TestParameters JsonHandler(string path, string fileName)
+        public static TestParameters JsonHandler(string path)
         {
-            string jsonString = File.ReadAllText(path + "\\" + fileName);
+            string jsonString = File.ReadAllText(path);
             var options = new JsonSerializerOptions
             {
                 Converters = { new RebalancingOracleDescriptionConverter() }
@@ -26,9 +26,9 @@ namespace Portfolio.Library
 
 
 
-        public static List<DataFeed> CsvHandler(string path, string csvFile, int numberOfShares)
+        public static List<DataFeed> CsvHandler(string path, int numberOfShares)
         {
-            string[] rawCsv = System.IO.File.ReadAllLines(path + "\\" + csvFile);
+            string[] rawCsv = System.IO.File.ReadAllLines(path);
             var allDataFeeds = new List<DataFeed>();
             for (int i = 1; i < rawCsv.Length / numberOfShares; i += numberOfShares)
             {
@@ -47,6 +47,20 @@ namespace Portfolio.Library
                 allDataFeeds.Add(blockDataFeed);
             }
             return allDataFeeds;
+        }
+
+
+        public static void CsvHandlerOutput(string filePath, string kindOfOutput, List<double> values)
+        {
+            List<String> strings = new List<String>();
+            strings.Add(kindOfOutput);
+            foreach (double value in values)
+            {
+                // Apply formatting to the string if necessary
+                strings.Add(value.ToString().Replace(',', '.'));
+            }
+
+            File.WriteAllLines(filePath, strings, Encoding.UTF8);
         }
     }
 }
