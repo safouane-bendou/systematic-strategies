@@ -50,14 +50,14 @@ namespace PortfolioLibrary
         }
 
 
-        public static void CsvHandlerOutput(string filePath, string kindOfOutput, List<double> values)
+        public static void CsvHandlerOutput(string filePath, string header, List<string> dates, List<double> values)
         {
             List<String> strings = new List<String>();
-            strings.Add(kindOfOutput);
-            foreach (double value in values)
+            strings.Add(header);
+            for(int i = 0; i < values.Count; i++)
             {
                 // Apply formatting to the string if necessary
-                strings.Add(value.ToString().Replace(',', '.'));
+                strings.Add(dates[i] + "," + values[i].ToString().Replace(',', '.'));
             }
 
             File.WriteAllLines(filePath, strings, Encoding.UTF8);
