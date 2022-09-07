@@ -23,10 +23,6 @@ namespace ConsoleApp1
     {
         public static void Main(string[] args)
         {
-            //string paramPath = "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\TestParameters\\share_5_strike_9.json";
-            //string marketPath = "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\MarketData\\data_share_5_2.csv";
-            //var marketData = FileHandler.CsvHandlerInput(path, 5);
-
             List<double> optionPrices = new List<double>();
             string path = args[0];
 
@@ -43,7 +39,6 @@ namespace ConsoleApp1
                 allDates.Add(marketData[i].Date.ToString());
                 PricingResults PriceResult = pricer.Price(TimeToMaturity, Spots);
                 optionPrices.Add(PriceResult.Price);
-                Console.WriteLine(allDates[i] + " " + PriceResult.Price + " " + portfolioValues[i]);
             }
             FileHandler.CsvHandlerOutput(args[2], "Dates" + "," + "Portfolio Values", allDates, portfolioValues);
             FileHandler.CsvHandlerOutput(args[3], "Dates" + "," + "Option Prices", allDates, optionPrices);
