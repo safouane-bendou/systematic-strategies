@@ -1,0 +1,12 @@
+C:\Users\localuser\Desktop\c#\systematic-strategies\Group_10\Portfolio.Library\bin\x64\Debug\net6.0\PortfolioLibrary.deps.json
+C:\Users\localuser\Desktop\c#\systematic-strategies\Group_10\Portfolio.Library\bin\x64\Debug\net6.0\PortfolioLibrary.dll
+C:\Users\localuser\Desktop\c#\systematic-strategies\Group_10\Portfolio.Library\bin\x64\Debug\net6.0\PortfolioLibrary.pdb
+C:\Users\localuser\Desktop\c#\systematic-strategies\Group_10\Portfolio.Library\obj\x64\Debug\net6.0\PortfolioLibrary.csproj.AssemblyReference.cache
+C:\Users\localuser\Desktop\c#\systematic-strategies\Group_10\Portfolio.Library\obj\x64\Debug\net6.0\PortfolioLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\localuser\Desktop\c#\systematic-strategies\Group_10\Portfolio.Library\obj\x64\Debug\net6.0\PortfolioLibrary.AssemblyInfoInputs.cache
+C:\Users\localuser\Desktop\c#\systematic-strategies\Group_10\Portfolio.Library\obj\x64\Debug\net6.0\PortfolioLibrary.AssemblyInfo.cs
+C:\Users\localuser\Desktop\c#\systematic-strategies\Group_10\Portfolio.Library\obj\x64\Debug\net6.0\PortfolioLibrary.csproj.CoreCompileInputs.cache
+C:\Users\localuser\Desktop\c#\systematic-strategies\Group_10\Portfolio.Library\obj\x64\Debug\net6.0\PortfolioLibrary.dll
+C:\Users\localuser\Desktop\c#\systematic-strategies\Group_10\Portfolio.Library\obj\x64\Debug\net6.0\refint\PortfolioLibrary.dll
+C:\Users\localuser\Desktop\c#\systematic-strategies\Group_10\Portfolio.Library\obj\x64\Debug\net6.0\PortfolioLibrary.pdb
+C:\Users\localuser\Desktop\c#\systematic-strategies\Group_10\Portfolio.Library\obj\x64\Debug\net6.0\ref\PortfolioLibrary.dll

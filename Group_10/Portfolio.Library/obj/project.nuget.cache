@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "j0uT8IqMrsPrHMjHLRZRnvfcO95869FkgP65U/DVgLOrsmygb7zlAtD/m3hcuUmkjoQhuKgdJfWEuTrEfYPIPg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\localuser\\Desktop\\c#\\systematic-strategies\\Group_10\\Portfolio.Library\\PortfolioLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\localuser\\.nuget\\packages\\csvhelper\\28.0.1\\csvhelper.28.0.1.nupkg.sha512",
+    "C:\\Users\\localuser\\.nuget\\packages\\fluentvalidation\\11.2.0\\fluentvalidation.11.2.0.nupkg.sha512",
+    "C:\\Users\\localuser\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
+    "C:\\Users\\localuser\\.nuget\\packages\\pricinglibrary\\2.0.1.5\\pricinglibrary.2.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}
