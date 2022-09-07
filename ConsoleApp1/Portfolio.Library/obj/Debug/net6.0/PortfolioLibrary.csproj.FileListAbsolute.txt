@@ -10,3 +10,15 @@ C:\Users\sbend\Desktop\ensimag\c#\systematic-strategies\ConsoleApp1\Portfolio.Li
 C:\Users\sbend\Desktop\ensimag\c#\systematic-strategies\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\refint\PortfolioLibrary.dll
 C:\Users\sbend\Desktop\ensimag\c#\systematic-strategies\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\PortfolioLibrary.pdb
 C:\Users\sbend\Desktop\ensimag\c#\systematic-strategies\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\ref\PortfolioLibrary.dll
+C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\Portfolio.Library\bin\Debug\net6.0\PortfolioLibrary.deps.json
+C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\Portfolio.Library\bin\Debug\net6.0\PortfolioLibrary.dll
+C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\Portfolio.Library\bin\Debug\net6.0\PortfolioLibrary.pdb
+C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\PortfolioLibrary.csproj.AssemblyReference.cache
+C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\PortfolioLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\PortfolioLibrary.AssemblyInfoInputs.cache
+C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\PortfolioLibrary.AssemblyInfo.cs
+C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\PortfolioLibrary.csproj.CoreCompileInputs.cache
+C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\PortfolioLibrary.dll
+C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\refint\PortfolioLibrary.dll
+C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\PortfolioLibrary.pdb
+C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\Portfolio.Library\obj\Debug\net6.0\ref\PortfolioLibrary.dll

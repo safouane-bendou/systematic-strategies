@@ -39,7 +39,8 @@ namespace PortfolioLibrary
         public void UpdatingPortfolio(DataFeed dataFeed, Dictionary<string, double> assets)
         {
             double capitalisationRiskFree = RiskFreeRateProvider.GetRiskFreeRateAccruedValue(CurrentDate, dataFeed.Date);
-            Value = (Value - PortfolioComputations.RiskyAssetsValue(Composition, assets)) * capitalisationRiskFree + PortfolioComputations.RiskyAssetsValue(Composition, dataFeed.PriceList);
+            Value = (Value - PortfolioComputations.RiskyAssetsValue(Composition, assets)) * capitalisationRiskFree;
+            Value += PortfolioComputations.RiskyAssetsValue(Composition, dataFeed.PriceList);
             CurrentDate = dataFeed.Date;
         }
 

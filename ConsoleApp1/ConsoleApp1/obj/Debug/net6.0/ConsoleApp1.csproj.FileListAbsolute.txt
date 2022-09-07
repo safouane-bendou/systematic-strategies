@@ -487,8 +487,6 @@ C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\ConsoleApp1\bin\
 C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\ConsoleApp1\bin\Debug\net6.0\runtimes\win10-x64\native\NativeLibrary.lib
 C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\ConsoleApp1\bin\Debug\net6.0\runtimes\win10-x64\native\Wrapper.lib
 C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\ConsoleApp1\bin\Debug\net6.0\runtimes\win10-x64\native\libpnl.lib
-C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\ConsoleApp1\bin\Debug\net6.0\Portfolio.Library.dll
-C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\ConsoleApp1\bin\Debug\net6.0\Portfolio.Library.pdb
 C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.csproj.AssemblyReference.cache
 C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.AssemblyInfoInputs.cache
@@ -502,3 +500,5 @@ C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\ConsoleApp1\obj\
 C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\ConsoleApp1\obj\Debug\net6.0\ref\ConsoleApp1.dll
 C:\Users\sbend\Desktop\ensimag\c#\systematic-strategies\ConsoleApp1\ConsoleApp1\bin\Debug\net6.0\PortfolioLibrary.dll
 C:\Users\sbend\Desktop\ensimag\c#\systematic-strategies\ConsoleApp1\ConsoleApp1\bin\Debug\net6.0\PortfolioLibrary.pdb
+C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\ConsoleApp1\bin\Debug\net6.0\PortfolioLibrary.dll
+C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\ConsoleApp1\bin\Debug\net6.0\PortfolioLibrary.pdb

@@ -2,6 +2,7 @@
 using PricingLibrary.DataClasses;
 using PricingLibrary.MarketDataFeed;
 using PricingLibrary.TimeHandler;
+using PricingLibrary.RebalancingOracleDescriptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,26 +58,43 @@ namespace PortfolioLibrary
             return priceResult.Price;
         }
 
-        public static List<double> PortfolioValues(List<DataFeed> marketData, DateTime optionMaturity, Pricer pricer)
+
+        public static IRebalanceOracle RebalancingConditionally(TestParameters testParameters)
+        {
+            IRebalanceOracle rebalancer;
+            if (testParameters.RebalancingOracleDescription.Type == RebalancingOracleType.Regular)
+            {
+                rebalancer = new RegularOracle(((RegularOracleDescription)testParameters.RebalancingOracleDescription).Period, testParameters.RebalancingOracleDescription.Type);
+            }
+            else
+            {
+                rebalancer = new WeeklyOracle(((WeeklyOracleDescription)testParameters.RebalancingOracleDescription).RebalancingDay, testParameters.RebalancingOracleDescription.Type);
+            }
+            return rebalancer;
+        } 
+
+        public static List<double> PortfolioValues(List<DataFeed> marketData, TestParameters testParameters)
         {
             //creating a brand new portfolio, no need to update when just getting started
+            Pricer pricer = new Pricer(testParameters);
+            DateTime optionMaturity = testParameters.BasketOption.Maturity;
             DataFeed initialDataFeed = marketData[0];
             Dictionary<string, double> assets = initialDataFeed.PriceList;
             Dictionary<string, double> newComposition = ComputeNewComposition(initialDataFeed, optionMaturity, pricer);
             double premium = ComputePremium(initialDataFeed, optionMaturity, pricer);
             Portfolio portfolio = new Portfolio(newComposition, premium, initialDataFeed.Date);
-            List<double> resultingPortfolioValues = new List<double>() { portfolio.Value };
-            
-            
+            IRebalanceOracle rebalancer = RebalancingConditionally(testParameters);
+            List<double> resultingPortfolioValues = new List<double>() { portfolio.Value };            
             foreach (DataFeed dataFeed in marketData.Skip(1))
             {
                 portfolio.UpdatingPortfolio(dataFeed, assets);
                 //Don't forget the rebalancing ; discarded for now : if Rebalancing()
-                portfolio.UpdateCompo(ComputeNewComposition(dataFeed, optionMaturity, pricer));
-
+                if (rebalancer.Rebalance(portfolio.CurrentDate, initialDataFeed.Date))
+                {
+                    portfolio.UpdateCompo(ComputeNewComposition(dataFeed, optionMaturity, pricer));
+                }
                 resultingPortfolioValues.Add(portfolio.Value);
                 assets = dataFeed.PriceList;
-
             }
             return resultingPortfolioValues;
         }

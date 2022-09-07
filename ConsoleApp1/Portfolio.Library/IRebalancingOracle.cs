@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using PricingLibrary.RebalancingOracleDescriptions;
 namespace PortfolioLibrary
 {
-    internal interface IRebalanceOracle
+    public interface IRebalanceOracle
     {
         bool Rebalance(DateTime Date, DateTime IitialDate);
     }

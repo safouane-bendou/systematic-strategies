@@ -29,12 +29,12 @@ namespace ConsoleApp1
 
             List<double> OptionPrices = new List<double>();
             string path = args[0];
-            var marketData = FileHandler.CsvHandlerInput(args[1], 5);
             
             var testParameters = FileHandler.JsonHandler(path);
-            DateTime optionMaturity = testParameters.BasketOption.Maturity;
+            int numberOfShares = testParameters.BasketOption.UnderlyingShareIds.Count();
+            var marketData = FileHandler.CsvHandlerInput(args[1], numberOfShares);
+            List<double> portfolioValues = PortfolioComputations.PortfolioValues(marketData, testParameters);
             Pricer pricer = new Pricer(testParameters);
-            List<double> portfolioValues = PortfolioComputations.PortfolioValues(marketData, optionMaturity, pricer);
             for (int i = 0; i < portfolioValues.Count; i++)
             {
                 double TimeToMaturity = MathDateConverter.ConvertToMathDistance(marketData[i].Date, testParameters.BasketOption.Maturity);
