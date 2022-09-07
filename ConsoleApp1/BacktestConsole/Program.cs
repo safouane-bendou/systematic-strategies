@@ -1,23 +1,4 @@
-C:\Users\localuser\Desktop\c#\systematic-strategies\ConsoleApp1\ConsoleApp1\bin\Debug\net6.0
-
-json : C:\Users\localuser\Desktop\c#\systematic-strategies\TestParameters\share_5_strike_9.json
-
-csv 1 : C:\Users\localuser\Desktop\c#\systematic-strategies\MarketData\data_share_5_2.csv
-
-csv 2 : C:\Users\localuser\Desktop\c#\systematic-strategies\PortfolioValues.csv
-
-csv 3 : C:\Users\localuser\Desktop\c#\systematic-strategies\OptionPrices.csv
-
-
-BacktestConsole.exe C:\Users\localuser\Desktop\c#\systematic-strategies\TestParameters\share_5_strike_9.json C:\Users\localuser\Desktop\c#\systematic-strategies\MarketData\data_share_5_2.csv C:\Users\localuser\Desktop\c#\systematic-strategies\PortfolioValues.csv C:\Users\localuser\Desktop\c#\systematic-strategies\OptionPrices.csv
-
-
-
-
-
-
-
-using System.Text.Json;
+﻿using System.Text.Json;
 using PricingLibrary;
 using PricingLibrary.DataClasses;
 using PricingLibrary.RebalancingOracleDescriptions;
@@ -46,26 +27,26 @@ namespace ConsoleApp1
             //string marketPath = "C:\\Users\\sbend\\Desktop\\ensimag\\c#\\systematic-strategies\\MarketData\\data_share_5_2.csv";
             //var marketData = FileHandler.CsvHandlerInput(path, 5);
 
-            List<double> OptionPrices = new List<double>();
+            List<double> optionPrices = new List<double>();
             string path = args[0];
-            var marketData = FileHandler.CsvHandlerInput(args[1], 5);
-            
+
             var testParameters = FileHandler.JsonHandler(path);
+            int numberOfShares = testParameters.BasketOption.UnderlyingShareIds.Count();
+            var marketData = FileHandler.CsvHandlerInput(args[1], numberOfShares);
             List<double> portfolioValues = PortfolioComputations.PortfolioValues(marketData, testParameters);
             Pricer pricer = new Pricer(testParameters);
+            List<string> allDates = new List<string>();
             for (int i = 0; i < portfolioValues.Count; i++)
             {
                 double TimeToMaturity = MathDateConverter.ConvertToMathDistance(marketData[i].Date, testParameters.BasketOption.Maturity);
                 double[] Spots = PortfolioComputations.SpotsArray(marketData[i].PriceList);
+                allDates.Add(marketData[i].Date.ToString());
                 PricingResults PriceResult = pricer.Price(TimeToMaturity, Spots);
-                OptionPrices.Add(PriceResult.Price);
-                Console.WriteLine(PriceResult.Price + " " + portfolioValues[i]);
+                optionPrices.Add(PriceResult.Price);
+                Console.WriteLine(allDates[i] + " " + PriceResult.Price + " " + portfolioValues[i]);
             }
-            FileHandler.CsvHandlerOutput(args[2], "Portfolio Values", portfolioValues);
-            FileHandler.CsvHandlerOutput(args[3], "Option Prices", OptionPrices);
-            /*FileHandler.CsvHandlerOutput("C:\\Users\\localuser\\source\\repos\\systematic-strategies(1)\\PortfolioValues.csv", "Portfolio Values", portfolio);
-            FileHandler.CsvHandlerOutput("C:\\Users\\localuser\\source\\repos\\systematic-strategies(1)\\OptionPrices.csv", "Option Prices", OptionPrices);*/
-
+            FileHandler.CsvHandlerOutput(args[2], "Dates" + "," + "Portfolio Values", allDates, portfolioValues);
+            FileHandler.CsvHandlerOutput(args[3], "Dates" + "," + "Option Prices", allDates, optionPrices);
         }
 
 
